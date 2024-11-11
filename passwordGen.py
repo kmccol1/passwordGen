@@ -10,8 +10,8 @@
 
 import tkinter as tk
 from tkinter import messagebox, scrolledtext
-import string
 import secrets
+import base64
 
 class MainGUI:
     def __init__(self):
@@ -63,16 +63,18 @@ class MainGUI:
         # Retrieve the desired password length
         try:
             length = int(self.length_entry.get())
-            if length < 8:
-                messagebox.showwarning("Warning", "Password length should be at least 8 characters.")
+            if length < 8 or length > 512:
+                messagebox.showwarning("Warning", "Password length should be between 8 and 512 characters.")
                 return
         except ValueError:
             messagebox.showerror("Error", "Please enter a valid number for password length.")
             return
 
         # Generate password
-        alphabet = string.ascii_letters + string.digits + string.punctuation
-        password = ''.join(secrets.choice(alphabet) for _ in range(length))
+        # Generate enough random bytes for the desired length
+        bytes_needed = (length * 6 + 7) // 8  # Calculating required bytes for Base64 output
+        random_bytes = secrets.token_bytes(bytes_needed)
+        password = base64.b64encode(random_bytes).decode('utf-8')[:length]
 
         # Display password in text widget
         self.result_text.config(state='normal')
@@ -102,5 +104,4 @@ class MainGUI:
 
 if __name__ == '__main__':
     main_gui = MainGUI()
-
 #****************************************************************************************************
