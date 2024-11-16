@@ -43,7 +43,8 @@ Securely generate strong passwords with ease using `passwordGen`, a Python-based
 ---
 
 ## **Screenshots**
-![App Screenshot](placeholder_for_screenshot.png)
+
+![App Screenshot](images/pw-gen-gui.png)
 
 > *Example of the clean and intuitive user interface provided by passwordGen.*
 
@@ -74,7 +75,7 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ## **Contact**
-Developed by [Kyle McColgan](mailto:youremail@example.com). Connect with me on [LinkedIn](https://www.linkedin.com/in/yourprofile).
+Developed by [Kyle McColgan](mailto:kdmbus21@gmail.com). Connect with me on [LinkedIn](https://www.linkedin.com/in/kylemccolgan).
 
 ---
 

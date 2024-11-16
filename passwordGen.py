@@ -2,9 +2,9 @@
 #
 #       Name:         Kyle McColgan
 #       File name:    passwordGen.py
-#       Date:         10 November 2024
+#       Date:         15 November 2024
 #       Description:
-#               This program provides a GUI based client to generate passwords.
+#               This program provides a GUI based client to generate URL-friendly passwords.
 #
 #****************************************************************************************************
 
@@ -12,6 +12,8 @@ import tkinter as tk
 from tkinter import messagebox, scrolledtext
 import secrets
 import base64
+
+#****************************************************************************************************
 
 class MainGUI:
     def __init__(self):
